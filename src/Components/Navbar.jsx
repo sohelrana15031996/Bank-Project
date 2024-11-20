@@ -9,8 +9,8 @@ const Navbar = () => {
   return (
     <>
       <nav className={`w-full flex justify-between items-center py-6`}>
-        <img src={logo} alt="" className='h-8' />
-        <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-4">
+        <img src={logo} alt="" className='h-8 sm:order-1 order-2' />
+        <ul className="list-none sm:flex hidden justify-end items-center flex-1 gap-4 order-3">
           {navLinks.map((navlink) => (<li
             key={navlink.id}
             className='font-poppins cursor-pointer text-white'
@@ -22,7 +22,7 @@ const Navbar = () => {
         </ul>
         <button
 
-          className='sm:hidden block text-white'
+          className='sm:hidden block text-white sm:order-4 order-1'
           onClick={() => setToggle((prev) => !prev)}
         >
           {
@@ -30,7 +30,7 @@ const Navbar = () => {
           }
         </button>
 
-        <div className={`sm:hidden ${toggle ? 'hidden' : 'flex'} bg-black-gradient p-6 min-w-[140px] absolute top-20 right-0 mx-4 my-2 rounded-xl sidebar`}>
+        <div className={`sm:hidden ${toggle ? 'hidden' : 'flex'} bg-black-gradient p-6 min-w-[140px] absolute top-20 left-0 mx-4 my-2 rounded-xl sidebar`}>
           <div className="">
             <ul className="list-none flex flex-col justify-start  flex-1 gap-4">
               {navLinks.map((navlink) => (<li
